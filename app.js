@@ -9,6 +9,7 @@ const titulo = (msg) => {
     console.log(msg)
     console.log('='.repeat(30))
 }
+
 const birthday = () => {
 
     const guardarAno = [];
@@ -21,12 +22,18 @@ const birthday = () => {
     }
 }
 
+const genero = () =>{
+    const guardarGenero = [];
+    for (let i=0;i<1000;i++){
+        guardarGenero[i] = chance.gender()
+        return guardarGenero[i];
+    }
+}
+
 const nome = () => {
 
     const guardarNome = [];
-
     for (let i = 0; i < 1000; i++) {
-
         guardarNome[i] = chance.name()
         return guardarNome[i];
     }
@@ -130,6 +137,7 @@ const filtrarUltimaCompra = () => {
 
     }
 }
+
 const filtrarNumeroDeCompras = () => {
     for (let i = 0; i < 1000; i++) {
         let compra = clientes[i].contaCompras
@@ -139,6 +147,7 @@ const filtrarNumeroDeCompras = () => {
         }
     }
 }
+
 const contabilizarAtributos = (atributo) => {
     let acc = 0;
     const contar = (primeiroCaracter) => {
@@ -196,21 +205,21 @@ const filtrarInicialNome = (caracter) => {
     }
     
 }
+
 const validarNome = (nome) => {
     let separado = [];
     for (let i = 0; i < 1000; i++) {
         let separarName = clientes[i].name.split(" ");
-        separado.push(separarName[0])
-
-        
+        separado.push(separarName[0])  
     }
     if(separado.find(elemento => elemento == nome)){
         console.log(`\n Há cliente com o nome ${nome}`)
     }
 }
+
 const filtrarRegistroPorIniciais = (caracter) => {
     let filtro = [];
-    let acc = 0;
+    
     for (let i = 0; i < 1000; i++) {
 
         let separar = clientes[i].name.split(" ");
@@ -218,8 +227,7 @@ const filtrarRegistroPorIniciais = (caracter) => {
         let teste = splitar.filter(inicial => inicial[0] == caracter.toUpperCase())
 
         if (teste == caracter.toUpperCase()) {
-            filtro.push(clientes[i]);
-            acc += 1;
+            filtro.push(clientes[i]);  
         }
     }
 
@@ -231,6 +239,7 @@ for (let i = 0; i < 1000; i++) {
     var cliente = new Object();
     cliente.name = nome();
     cliente.birthday = birthday();
+    cliente.genero = genero();
     cliente.lastPurchase = lastPurchase();
     cliente.contaCompras = contaCompras();
     // validarInicial('B')

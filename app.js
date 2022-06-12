@@ -280,7 +280,7 @@ while (true) {
         console.log(filtrarRegistroPorIniciais('T'));
     } else if (selecao == 4) {
         titulo("Contabilizar atributos por caracter:")
-        contabilizarAtributos('F');
+        contabilizarAtributos('Y');
     } else if (selecao == 5) {
         titulo("Filtro por nome:")
         filtrarNome('David');
@@ -295,7 +295,7 @@ while (true) {
         maioresDeIdade();
     } else if(selecao == 9){
         titulo("Procurar se há clientes com o nome:")
-        validarNome('John');
+        validarNome('Ryan');
     }else if(selecao == 10){
         titulo("Total de compras:")
         somarCompras();
@@ -310,13 +310,7 @@ while (true) {
         let pesquisa = ps("Nome do cliente:")
         
         ordenarNome(pesquisa);
-    } else if(selecao == 14){
-        for (let i = 0; i < 1000; i++) {
-            console.log(clientes[i])
-         }
-    }
-    
-    else {
+    } else {
         break;
     }
 }
